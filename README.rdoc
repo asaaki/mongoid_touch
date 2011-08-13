@@ -1,6 +1,6 @@
 = mongoid_touch
 
-Description goes here.
+A tiny mongoid extension to provide the `touch` method known from ActiveRecord to Mongoid::Document.
 
 == Contributing to mongoid_touch
  
