@@ -47,4 +47,5 @@ DEPENDENCIES
   jeweler (~> 1.6.4)
   mongoid
   mongoid-rspec
+  rake
   rspec (~> 2.3.0)
