@@ -41,11 +41,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bson_ext
+  bson_ext (~> 1.3.1)
   bundler (~> 1.0.0)
-  database_cleaner
+  database_cleaner (~> 0.6.7)
   jeweler (~> 1.6.4)
-  mongoid
-  mongoid-rspec
+  mongoid (~> 2.1.7)
+  mongoid-rspec (~> 1.4.4)
   rake
   rspec (~> 2.3.0)
