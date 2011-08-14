@@ -3,6 +3,7 @@ source "http://rubygems.org"
 gem "mongoid"
 
 group :development, :test do
+  gem "rake"
   gem "rspec", "~> 2.3.0"
   gem "mongoid-rspec"
   gem "bson_ext"
