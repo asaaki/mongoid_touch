@@ -2,7 +2,28 @@
 
 A tiny mongoid extension to provide the `touch` method known from ActiveRecord to Mongoid::Document.
 
-## Contributing to mongoid_touch
+## Usage
+
+Use Bundler/Gemfile, add `gem "mongoid_touch"` right after your added mongoid.
+
+Now you can use:
+
+```ruby
+my_model_instance.touch
+my_model_instance.touch! # alias of .touch
+```
+
+This will update the `updated_at` field if present.
+
+```ruby
+my_model_instance.touch(:modified_at)
+```
+
+This will update the custom field `modified_at` if present.
+
+If the corresponding field is not present, mongoid_touch will raise an `Mongoid::Errors::MissingField`.
+
+## Contributing to `mongoid_touch`
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
