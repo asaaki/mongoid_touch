@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'bundler'
+
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
@@ -17,8 +18,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "mongoid_touch"
   gem.homepage = "http://github.com/asaaki/mongoid_touch"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Mongoid::Document with a touch method}
+  gem.description = %Q{A tiny mongoid extension to provide the `touch` method known from ActiveRecord to Mongoid::Document.}
   gem.email = "chris@dinarrr.com"
   gem.authors = ["Christoph Grabo"]
   # dependencies defined in Gemfile
@@ -33,17 +34,7 @@ end
 
 RSpec::Core::RakeTask.new(:rcov) do |spec|
   spec.pattern = 'spec/**/*_spec.rb'
-  spec.rcov = true
 end
 
 task :default => :spec
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "mongoid_touch #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
