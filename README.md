@@ -6,6 +6,8 @@ A tiny mongoid extension to provide the `touch` method known from ActiveRecord t
 
 Use Bundler/Gemfile, add `gem "mongoid_touch"` right after your added mongoid.
 
+The method `.touch` can have an optional parameter for your custom Time based field.
+
 Now you can use:
 
 ```ruby
@@ -21,7 +23,7 @@ my_model_instance.touch(:modified_at)
 
 This will update the custom field `modified_at` if present.
 
-If the corresponding field is not present, mongoid_touch will raise an `Mongoid::Errors::MissingField`.
+If the corresponding field is not present, mongoid_touch will raise a `Mongoid::Errors::MissingField`.
 
 ## Contributing to `mongoid_touch`
  
