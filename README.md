@@ -2,28 +2,37 @@
 
 A tiny mongoid extension to provide the `touch` method known from ActiveRecord to Mongoid::Document.
 
-## Usage
+## Install and Usage
 
 Use Bundler/Gemfile, add `gem "mongoid_touch"` right after your added mongoid.
 
-The method `.touch` can have an optional parameter for your custom Time based field.
+The method `.touch` can have an optional parameter for your custom Time based field, otherwise it will try to use the `updated_at` field (include Mongoid::Timestamps in your model).
+
+Use `.touch!` if you want to get exceptions if touching fails.
 
 Now you can use:
 
 ```ruby
 my_model_instance.touch
-my_model_instance.touch! # alias of .touch
+my_model_instance.touch! # will raise errors if touching fails.
 ```
 
 This will update the `updated_at` field if present.
 
 ```ruby
 my_model_instance.touch(:modified_at)
+my_model_instance.touch(:modified_at) # will raise errors if touching fails.
 ```
 
 This will update the custom field `modified_at` if present.
 
+## Exceptions for `touch!`
+
 If the corresponding field is not present, mongoid_touch will raise a `Mongoid::Errors::MissingField`.
+
+If the object is frozen, an exception of `Mongoid::Errors::FrozenInstance` is thrown.
+
+If the underlying `update_attribute` doesn't return true, `Mongoid::Errors::DocumentNotUpdated` is thrown (unless mongoid itself throws an error).
 
 ## Contributing to `mongoid_touch`
  

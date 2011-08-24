@@ -1,0 +1,12 @@
+en:
+  mongoid:
+    errors:
+      messages:
+        touch:
+          document_not_updated:
+            The document %{name} was not updated successfully.
+          frozen_instance:
+            The document %{name} is frozen and can't be updated.
+          missing_field:
+            The field %{name} is not present for %{instance}.
+
