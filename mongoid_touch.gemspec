@@ -13,7 +13,8 @@ Gem::Specification.new do |s|
   s.description = %q{A tiny mongoid extension to provide the `touch` method known from ActiveRecord to Mongoid::Document.}
   s.email = %q{chris@dinarrr.com}
   s.extra_rdoc_files = [
-    "LICENSE.txt"
+    "LICENSE.txt",
+    "README.md"
   ]
   s.files = [
     ".document",
@@ -23,8 +24,13 @@ Gem::Specification.new do |s|
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
+    "README.md",
     "Rakefile",
     "VERSION",
+    "lib/config/locales/en.yml",
+    "lib/mongoid/document/touch.rb",
+    "lib/mongoid/errors/document_not_updated.rb",
+    "lib/mongoid/errors/frozen_instance.rb",
     "lib/mongoid/errors/missing_field.rb",
     "lib/mongoid_touch.rb",
     "mongoid_touch.gemspec",

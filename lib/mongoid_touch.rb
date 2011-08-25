@@ -1,18 +1,9 @@
 # encoding: utf-8
-
+require "mongoid"
+require "mongoid/errors/document_not_updated"
+require "mongoid/errors/frozen_instance"
 require "mongoid/errors/missing_field"
+require "mongoid/document/touch"
 
-module Mongoid
-  module Document
-    def touch( at_field = nil )
-      to_touch = at_field || :updated_at
-      if self.fields.include? to_touch.to_s
-        self.update_attribute(to_touch.to_sym, Time.now.utc)
-      else
-        raise Errors::MissingField.new(to_touch.to_s)
-      end
-    end
-    alias :touch! :touch
-  end
-end
+I18n.load_path << File.join(File.dirname(__FILE__), "config", "locales", "en.yml")
 
