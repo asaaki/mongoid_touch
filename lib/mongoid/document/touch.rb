@@ -6,10 +6,7 @@ module Mongoid
       extend ActiveSupport::Concern
       
       included do
-      end
-      
-      module InstanceMethods
-      
+      end 
         def touch( at_field = nil )
           unless self.frozen?
             to_touch = at_field || :updated_at
@@ -38,9 +35,6 @@ module Mongoid
             raise Errors::FrozenInstance, self
           end
         end
-        
-      end
-    
     end
   end
 end
