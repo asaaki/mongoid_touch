@@ -21,7 +21,7 @@ This will update the `updated_at` field if present.
 
 ```ruby
 my_model_instance.touch(:modified_at)
-my_model_instance.touch(:modified_at) # will raise errors if touching fails.
+my_model_instance.touch!(:modified_at) # will raise errors if touching fails.
 ```
 
 This will update the custom field `modified_at` if present.
