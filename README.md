@@ -4,9 +4,28 @@ A tiny mongoid extension to provide the `touch` method known from ActiveRecord t
 
 ## Install and Usage
 
-Use Bundler/Gemfile, add `gem "mongoid_touch"` right after your added mongoid.
+**Gemfile:**
 
-The method `.touch` can have an optional parameter for your custom Time based field, otherwise it will try to use the `updated_at` field (include Mongoid::Timestamps in your model).
+```ruby
+gem "mongoid_touch"
+```
+
+(Or install it with `gem install mongoid_touch` and then require it: `require "mongoid_touch"`.)
+
+**In model:**
+
+```ruby
+class MyModel
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  include Mongoid::Document::Touch
+
+  # ... your code ...
+
+end
+```
+
+The method `.touch` can have an optional parameter for your custom Time based field, otherwise it will try to use the `updated_at` field (include `Mongoid::Timestamps` or `Mongoid::Timestamps::Updated` in your model).
 
 Use `.touch!` if you want to get exceptions if touching fails.
 
@@ -35,7 +54,7 @@ If the object is frozen, an exception of `Mongoid::Errors::FrozenInstance` is th
 If the underlying `update_attribute` doesn't return true, `Mongoid::Errors::DocumentNotUpdated` is thrown (unless mongoid itself throws an error).
 
 ## Contributing to `mongoid_touch`
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
@@ -46,6 +65,4 @@ If the underlying `update_attribute` doesn't return true, `Mongoid::Errors::Docu
 
 ## Copyright
 
-Copyright (c) 2011 Christoph Grabo. See LICENSE.txt for
-further details.
-
+Copyright (c) 2011-2012 Christoph Grabo. See LICENSE.txt for further details.
