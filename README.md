@@ -1,4 +1,14 @@
-# mongoid_touch ![build status](http://travis-ci.org/asaaki/mongoid_touch.png)
+# mongoid_touch
+
+```
+THIS GEM IS OBSOLETE! TOUCH IS NOW BUILT IN MONGOID (since 3.0.0)!
+
+THE REPO WILL STAY ONLY FOR HISTORICAL REASONS.
+```
+
+Reference in mongoid: lib/mongoid/[**persistence.rb**](https://github.com/mongoid/mongoid/blob/09d41c7d8bc23b350a114fbb87ac90d205adebfc/lib/mongoid/persistence.rb#L102-134)
+
+----
 
 A tiny mongoid extension to provide the `touch` method known from ActiveRecord to Mongoid::Document.
 
